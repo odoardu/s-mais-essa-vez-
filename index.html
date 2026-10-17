@@ -1,1 +1,351 @@
-<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow,noarchive"><meta http-equiv="Cache-Control" content="no-store"><meta name="theme-color" content="#000000"><title>não há mais outra vez</title><style>*{box-sizing:border-box}html,body{margin:0;background:#000;color:#e9e6e0;min-height:100%;font-family:Georgia,serif}main{min-height:100svh;display:grid;place-items:center;padding:32px;text-align:center}h1{font-size:clamp(32px,7vw,84px);line-height:1.2;font-weight:400;letter-spacing:-1px;margin:0}</style></head><body><main><h1>não há mais outra vez</h1></main></body></html>
+<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#000000"><link rel="preload" href="assets/music-loop.mp3" as="fetch" crossorigin><title>É só mais essa vez.</title><style>*{box-sizing:border-box}html,body{margin:0;min-height:100%;background:#000;color:#ddd8d1}body{font-family:Georgia,'Times New Roman',serif}#cover,#reader{min-height:100svh;width:100%;display:flex;align-items:center;justify-content:center;padding:65px 7vw}#cover[hidden],#reader[hidden]{display:none}#start{font-family:inherit;font-weight:400;font-size:clamp(34px,7vw,80px);letter-spacing:-1px;background:none;border:0;color:#f4eee7;cursor:pointer;padding:30px 0;line-height:1.3}#start:focus-visible,#reader:focus-visible{outline:1px solid #777;outline-offset:-10px}#reader{touch-action:none;user-select:none;-webkit-user-select:none;-webkit-touch-callout:none;cursor:default}.page{width:min(100%,960px);text-align:center}#passage{margin:0;font-size:clamp(25px,4vw,46px);line-height:1.55;font-weight:400;letter-spacing:-.3px;white-space:pre-line;opacity:1;filter:blur(0);transform:translateY(0);transition:opacity var(--fade,500ms) ease,filter var(--fade,500ms) ease,transform var(--fade,500ms) ease}#passage.out{opacity:0;filter:blur(3px);transform:translateY(5px)}#passage.emphasis{font-size:clamp(37px,6.7vw,78px);line-height:1.3;color:#fff}#passage.whisper{font-size:clamp(22px,3.4vw,38px);font-style:italic;color:#b2aaa1}#passage.question{font-style:italic;color:#eee}#passage strong{font-weight:700;color:#fff}@media(max-width:600px){#reader{padding:65px 28px}#passage{font-size:29px}#passage.emphasis{font-size:42px}}@media(prefers-reduced-motion:reduce){#passage{transition:none;filter:none!important;transform:none!important}}
+#start{position:relative;text-align:left;font-size:clamp(54px,11vw,130px);line-height:1.02;letter-spacing:-3px;isolation:isolate}#start .opening-first{display:block;font-size:.58em;color:#aaa7a2;font-style:italic;letter-spacing:-1px;animation:openingIn 1.8s both}#start .opening-last{display:block;animation:openingIn 2.5s .5s both,breathing 7s 3s ease-in-out infinite}#start .opening-dot{display:inline-block;animation:dotPulse 4s 2s ease-in-out infinite}#start:after{content:'';position:absolute;bottom:-15px;left:0;height:1px;width:35%;background:linear-gradient(90deg,#b9b2a5,transparent);transform-origin:left;animation:lineIn 2.2s 1.3s both}#start:hover .opening-last{color:#fff}#start:active{transform:scale(.98)}
+@keyframes openingIn{from{opacity:0;filter:blur(12px);transform:translateY(25px);letter-spacing:4px}to{opacity:1;filter:blur(0);transform:translateY(0)}}@keyframes breathing{0%,100%{opacity:.8;transform:translateX(0)}50%{opacity:1;transform:translateX(5px)}}@keyframes dotPulse{0%,100%{opacity:.35}50%{opacity:1;text-shadow:0 0 25px #fff8}}@keyframes lineIn{from{transform:scaleX(0);opacity:0}to{transform:scaleX(1);opacity:1}}
+.word{display:inline-block;white-space:pre;will-change:opacity,transform}#passage strong{display:inline;font-weight:700}#passage.emphasis{letter-spacing:-1.5px}#passage.whisper{letter-spacing:.5px}#passage{perspective:800px}body.holding .word{animation-play-state:paused}
+@media(prefers-reduced-motion:reduce){#start span,#start:after{animation:none!important}.word{will-change:auto}}
+#ending{min-height:100svh;display:flex;align-items:center;justify-content:center;padding:40px 28px;background:#000}#ending[hidden]{display:none}.polaroid{margin:0;background:#f3f0e8;padding:13px 13px 66px;max-width:360px;width:min(78vw,calc(65svh * .76));box-shadow:0 12px 70px #ffffff10;transform:rotate(-3deg);animation:develop 2.8s cubic-bezier(.2,.7,.2,1) both}.polaroid video{display:block;width:100%;height:auto;aspect-ratio:512/674;object-fit:contain;background:#171717;pointer-events:none}@keyframes develop{from{opacity:0;filter:blur(6px);transform:translateY(22px) rotate(-7deg) scale(.93)}to{opacity:1;filter:blur(0);transform:translateY(0) rotate(-3deg) scale(1)}}@media(prefers-reduced-motion:reduce){.polaroid{animation:none}}</style></head><body><main><section id="cover"><button id="start" aria-label="É só mais essa vez."><span class="opening-first">É só mais</span> <span class="opening-last">essa vez<span class="opening-dot">.</span></span></button></section><section id="reader" hidden tabindex="0" aria-label="Toque à esquerda para voltar, à direita para avançar. Segure para pausar."><article class="page"><p id="passage"></p></article></section><section id="ending" hidden aria-label="Uma lembrança"><figure class="polaroid"><video id="memory" muted playsinline loop preload="metadata" poster="assets/memory.jpg" disablepictureinpicture><source src="assets/memory.mp4" type="video/mp4"></video></figure></section></main><script id="story" type="text/plain">
+Há algo de profundamente injusto na maneira como o tempo trata os homens felizes.
+
+Não sei se já repararam, mas ele parece possuir certa predileção por nossa desgraça. Quando sofremos, senta-se ao nosso lado, cruza as pernas e permanece ali, imóvel, observando-nos com uma paciência quase ofensiva. Mas basta que estejamos felizes, verdadeiramente felizes, para que se levante apressado, consulte o relógio e anuncie que precisa partir.
+
+E eu, naquela tarde, estava feliz.
+
+Deus sabe como estava feliz!
+
+Ela estava ao meu lado. Falávamos sobre coisas que, muito provavelmente, não teriam importância alguma no dia seguinte. E que importância poderiam ter? Eu não desejava grandes revelações, tampouco alguma dessas conversas extraordinárias que os homens gostam de recordar para convencer a si mesmos de que viveram alguma coisa digna de nota.
+
+Bastava-me sua presença.
+
+Por vezes, enquanto ela falava, eu me surpreendia observando algum detalhe insignificante de seu rosto. E então sorria, não por ter encontrado alguma coisa engraçada, mas simplesmente porque podia olhá-la.
+
+Que felicidade miseravelmente simples!
+
+E, no entanto, foi precisamente naquele momento que me ocorreu uma ideia que, desde então, não me abandonou.
+
+Tudo aquilo estava acontecendo uma única vez.
+
+Não aquela tarde, compreenda. Outras tardes viriam, disso eu sabia. Nós nos encontraríamos novamente, conversaríamos, riríamos, haveríamos de colecionar outras pequenas felicidades.
+
+Mas aquele instante, aquele exato instante, já começava a desaparecer enquanto eu o vivia.
+
+Olhei ao redor.
+
+Nada havia mudado.
+
+Ela continuava ali, e eu continuava ouvindo sua voz.
+
+Mas alguma coisa em mim havia se revoltado.
+
+Não contra ela, naturalmente. Nem contra a vida. Revoltara-me contra uma injustiça muito mais antiga, uma injustiça que todos os homens, desde o primeiro deles, aceitaram com uma resignação que agora me parecia absolutamente incompreensível.
+
+Por que diabos um segundo precisa terminar?
+
+Quem estabeleceu semelhante regra?
+
+E, sobretudo, a quem eu deveria dirigir minha reclamação?
+
+Ah, se ao menos o tempo fosse um homem!
+
+Um homem de carne e osso, desses que encontramos nos corredores das repartições, com um rosto cansado, uma mesa coberta de papéis e alguma autoridade sobre aquilo que nos pertence.
+
+Eu iria procurá-lo.
+
+Esperaria horas, se necessário. Suportaria sua indiferença, suas perguntas burocráticas, até mesmo o desprezo com que provavelmente examinaria minha solicitação.
+
+E, quando finalmente me recebesse, eu lhe pediria apenas isto:
+
+— Senhor, não desejo alterar coisa alguma. Não venho reclamar do passado, tampouco exigir garantias sobre o futuro. Quero somente um segundo.
+
+Ele talvez levantasse os olhos dos documentos.
+
+— Um segundo?
+
+— Sim, senhor. Um único segundo.
+
+— E para quê?
+
+Que pergunta absurda!
+
+Para quê!
+
+Como explicar a um homem encarregado de distribuir os instantes que alguns deles valem mais do que todos os outros?
+
+Eu hesitaria.
+
+Talvez lhe contasse sobre ela. Sobre aquela tarde. Sobre a felicidade que me tomara de maneira tão inesperada que, pela primeira vez, eu não conseguia imaginar um lugar onde preferisse estar.
+
+Mas logo perceberia o ridículo da situação.
+
+O pobre homem provavelmente ouvira milhares de histórias semelhantes. Mães desejando ouvir novamente as primeiras palavras dos filhos. Velhos implorando por uma última conversa. Amantes pedindo que determinada despedida jamais tivesse acontecido.
+
+E eis que aparecia eu, um sujeito perfeitamente saudável, sem nenhuma tragédia a relatar, solicitando uma alteração nas leis do universo porque havia passado algumas horas agradáveis com a mulher que amava!
+
+Ele certamente me mandaria embora.
+
+E, no entanto, eu insistiria.
+
+— Não pretendo conservá-lo, compreenda! Não quero roubá-lo da eternidade. Deixe-o passar, se assim deve ser. Peço somente que, depois de passado, o senhor o devolva ao início.
+
+— E depois?
+
+— Depois ele poderá terminar.
+
+— Muito bem.
+
+— Mas…
+
+— Mas o quê?
+
+— Seria possível, quando terminasse novamente, recomeçá-lo?
+
+Ah, como ele haveria de me olhar!
+
+E eu baixaria a cabeça, envergonhado, como um criminoso surpreendido cometendo pela segunda vez o mesmo delito.
+
+Pois essa era a verdade que eu não ousaria confessar: não desejava um segundo a mais.
+
+Desejava aquele mesmo segundo, repetido até que a própria eternidade se cansasse de me concedê-lo.
+
+E, mesmo assim, desconfio que não me cansaria.
+
+Voltei os olhos para ela.
+
+Ainda conversávamos.
+
+Talvez eu tenha rido de alguma coisa que dissera. Talvez ela tenha encostado em mim. Não consigo recordar com precisão, e essa incapacidade me causa uma irritação curiosa, pois justamente os acontecimentos que mais desejamos conservar são aqueles que a memória insiste em nos devolver incompletos.
+
+Lembro-me, porém, de ter pensado que em breve ela voltaria para casa.
+
+Haveria uma despedida, como tantas outras. Depois eu retornaria às minhas ocupações, aos meus hábitos, à sucessão de pequenas obrigações que compõem uma existência comum.
+
+Nada especialmente terrível.
+
+E talvez fosse essa a parte mais estranha de tudo.
+
+Não havia desgraça alguma me aguardando do outro lado daquela porta.
+
+Ainda assim, eu teria dado qualquer coisa para que ela demorasse um pouco mais a se abrir.
+
+Foi quando imaginei, não sei por que capricho da consciência, que o universo inteiro pudesse ouvir meus pensamentos.
+
+Não o universo grandioso dos astrônomos, com suas estrelas e distâncias incompreensíveis, mas alguma coisa mais próxima, quase humana, que permanecesse silenciosamente à nossa volta, ocupada em fazer com que os acontecimentos se sucedessem na ordem correta.
+
+E dirigi-me a ele.
+
+Não em voz alta, naturalmente. Que teria ela pensado se eu, de repente, começasse a discutir com o vazio?
+
+Mas supliquei.
+
+Meu Deus, como supliquei!
+
+Não lhe pedi riqueza, nem juventude, nem sequer uma vida longa.
+
+Pedi que interrompesse por um instante aquele mecanismo monstruoso que transforma o presente em passado.
+
+Só mais essa vez.
+
+Veja, eu não era inteiramente insensato. Sabia que o mundo não poderia parar apenas porque eu estava feliz. Em algum lugar, naquele exato momento, um homem esperava pelo nascimento de seu filho; outro aguardava que uma dor terminasse; milhares de pessoas desejavam desesperadamente que chegasse o amanhã.
+
+Que direito teria eu de mantê-las presas àquela tarde?
+
+Nenhum, evidentemente.
+
+Foi por isso que formulei uma proposta mais razoável.
+
+Que o mundo continuasse.
+
+Que os relógios prosseguissem em sua marcha.
+
+Que as manhãs viessem, que as pessoas envelhecessem, que os trens partissem e chegassem aos seus destinos.
+
+Eu não exigiria coisa alguma dos outros.
+
+Queria apenas que, em algum lugar inacessível a todos, existisse uma pequena dobra no tempo, uma passagem escondida, pela qual eu pudesse retornar àquele instante sempre que desejasse.
+
+Uma eternidade de apenas um segundo.
+
+Que extraordinário absurdo!
+
+E o mais ridículo é que eu provavelmente passaria o restante da vida procurando essa passagem.
+
+Viveria normalmente, trabalharia, envelheceria, encontraria outras razões para ser feliz. Mas, de vez em quando, fecharia os olhos e tentaria regressar.
+
+E, quando a lembrança não fosse suficiente, quando sua voz já não soasse exatamente como naquela tarde, eu voltaria a procurar o responsável.
+
+Bateria à sua porta.
+
+— Sou eu novamente.
+
+— Outra vez o senhor?
+
+— Receio que sim.
+
+— Mas já lhe concedi aquele instante.
+
+— Eu sei. E sou imensamente grato.
+
+— Então o que deseja agora?
+
+Eu permaneceria em silêncio.
+
+Pois que poderia dizer?
+
+Como explicar que nada estava errado, que nada precisava ser corrigido, que eu não desejava outra vida, outra mulher, outro destino?
+
+Que todo o meu inconformismo nascera precisamente do fato de que, por um breve momento, eu havia recebido tudo aquilo que queria?
+
+O funcionário suspiraria.
+
+E eu, percebendo que sua paciência chegava ao fim, me aproximaria da mesa, com a humildade vergonhosa de quem está prestes a pedir um favor que sabe não merecer.
+
+— É só mais essa vez.
+
+Ele me observaria por alguns instantes.
+
+— Foi o que o senhor disse da última vez.
+
+— Eu sei.
+
+— E da vez anterior.
+
+— Também sei.
+
+— O senhor pretende continuar fazendo esse pedido para sempre?
+
+Eu pensaria nela.
+
+Naquele rosto.
+
+Naquela voz.
+
+Na felicidade quase infantil de simplesmente estar ali.
+
+E então, pela primeira vez diante daquele homem, eu não conseguiria mentir.
+
+— Sim — responderia baixinho. — Creio que sim.
+
+⸻
+
+Mas naquela tarde não havia repartições, nem funcionários, nem portas escondidas na eternidade.
+
+Havia apenas nós dois.
+
+E o tempo, indiferente às minhas negociações imaginárias, continuava passando.
+
+Ela disse alguma coisa.
+
+Eu ri.
+
+Depois a abracei.
+
+E, durante alguns segundos, esqueci completamente aquele meu extraordinário processo contra o universo.
+
+Fui feliz, simplesmente.
+
+Tão feliz que, quando me lembrei novamente do tempo, já havia perdido mais um instante.
+
+Não me desesperei.
+
+Apertei-a um pouco mais contra mim.
+
+E pensei, com uma ternura quase dolorosa, que talvez, naquele exato momento, estivesse acontecendo alguma coisa que eu passaria muitos anos desejando viver novamente.
+
+Então fiz minha última proposta.
+
+Não pedi que ela ficasse.
+
+Não pedi que a tarde não terminasse.
+
+Pedi apenas que, quando chegasse a hora, o tempo tivesse a decência de me conceder uma última repetição.
+
+Uma só.
+
+E, se ele aceitasse, se por algum milagre aquele instante recomeçasse, eu não faria absolutamente nada diferente.
+
+Ouviria sua voz.
+
+Sentiria sua presença.
+
+E, quando estivesse novamente prestes a acabar, eu me aproximaria, como quem deseja contar um segredo, e sussurraria ao ouvido daquela eternidade tão pequena:
+
+Perdoe-me.
+
+Eu sei que prometi.
+
+Mas é só mais essa vez.
+
+Só mais essa vez.
+
+Por favor.
+
+Só mais essa vez.
+</script><script>const $=id=>document.getElementById(id);const paragraphs=$('story').textContent.trim().split(/\n\s*\n/);const scenes=[];
+for(const paragraph of paragraphs){
+ if(paragraph==='⸻')continue;
+ const sentences=paragraph.match(/[^.!?]+(?:[.!?]+[”»]?|$)/g)||[paragraph];
+ for(let sentence of sentences){sentence=sentence.trim();if(!sentence)continue;
+ const words=sentence.split(/\s+/);if(words.length<=31){scenes.push(sentence);continue}
+ let chunk='';for(const part of sentence.split(/(?<=[,;:])\s+/)){if((chunk+' '+part).trim().split(/\s+/).length>30&&chunk){scenes.push(chunk.trim());chunk=''}chunk+=(chunk?' ':'')+part}if(chunk)scenes.push(chunk.trim());
+ }
+}
+const boldPhrases=["profundamente injusto", "E eu, naquela tarde, estava feliz.", "Bastava-me sua presença.", "Que felicidade miseravelmente simples!", "Tudo aquilo estava acontecendo uma única vez.", "já começava a desaparecer enquanto eu o vivia.", "Por que diabos um segundo precisa terminar?", "alguns deles valem mais do que todos os outros?", "não desejava um segundo a mais.", "Desejava aquele mesmo segundo,", "até que a própria eternidade se cansasse de me concedê-lo.", "Não havia desgraça alguma me aguardando do outro lado daquela porta.", "transforma o presente em passado.", "Só mais essa vez.", "Uma eternidade de apenas um segundo.", "eu havia recebido tudo aquilo que queria?", "Havia apenas nós dois.", "Fui feliz, simplesmente.", "já havia perdido mais um instante.", "eu não faria absolutamente nada diferente.", "Perdoe-me.", "Eu sei que prometi.", "Por favor."];function renderPassage(node,text){node.replaceChildren();const hits=[];for(const phrase of boldPhrases){let at=text.indexOf(phrase);while(at!==-1){hits.push({at,end:at+phrase.length});at=text.indexOf(phrase,at+phrase.length)}}hits.sort((a,b)=>a.at-b.at||b.end-a.end);let cursor=0;for(const hit of hits){if(hit.at<cursor)continue;if(hit.at>cursor)node.append(document.createTextNode(text.slice(cursor,hit.at)));const strong=document.createElement("strong");strong.textContent=text.slice(hit.at,hit.end);node.append(strong);cursor=hit.end}if(cursor<text.length)node.append(document.createTextNode(text.slice(cursor)));}
+const anchors=['E eu, naquela tarde, estava feliz.','Bastava-me sua presença.','Tudo aquilo estava acontecendo uma única vez.','Por que diabos um segundo precisa terminar?','Desejava aquele mesmo segundo, repetido até que a própria eternidade se cansasse de me concedê-lo.','Uma eternidade de apenas um segundo.','Havia apenas nós dois.','Fui feliz, simplesmente.'];
+function direction(text,i){
+ const words=text.split(/\s+/).length;
+ const last=i>scenes.length-12;
+ const whisper=last||/Perdoe-me|Eu sei que prometi|Por favor|responderia baixinho/.test(text);
+ const anchor=anchors.includes(text)||(!last&&/^Só mais essa vez\.$/.test(text));
+ const dialogue=text.startsWith('—');
+ const question=text.endsWith('?');
+ let hold=words*235+950;
+ if(dialogue)hold=words*205+700;
+ if(question)hold+=350;
+ if(/Naquele rosto|Naquela voz|Ouviria sua voz|Sentiria sua presença/.test(text))hold=2400;
+ if(anchor)hold+=1000;
+ if(whisper)hold=words*300+1600;
+ if(i===scenes.length-1)hold=4800;
+ return {hold:Math.max(1650,hold)*1.15,fade:whisper?950:anchor?800:dialogue?300:500,breath:whisper?700:anchor?450:dialogue?120:220,anchor,whisper,question};
+}
+
+let index=0,started=false,finished=false,timer=null,deadline=0,remaining=0,pending=null,holding=false,pointer=null,downAt=0,originX=0,originY=0,pausedAnimations=[];
+
+function animateTypography(node,beat){
+ if(window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+ const walker=document.createTreeWalker(node,NodeFilter.SHOW_TEXT);const texts=[];while(walker.nextNode())texts.push(walker.currentNode);
+ let order=0;const count=node.textContent.split(/\s+/).length;const step=Math.min(72,1050/Math.max(1,count));
+ for(const textNode of texts){const fragment=document.createDocumentFragment();for(const part of textNode.textContent.split(/(\s+)/)){if(!part)continue;if(/^\s+$/.test(part)){fragment.append(document.createTextNode(part));continue}const span=document.createElement('span');span.className='word';span.textContent=part;fragment.append(span);const emphasized=textNode.parentElement.tagName==='STRONG';
+ const from=beat.whisper?{opacity:0,filter:'blur(5px)',transform:'translateY(2px)'}:beat.anchor?{opacity:0,filter:'blur(8px)',transform:'translateY(16px) scale(.94)'}:{opacity:0,filter:'blur(4px)',transform:'translateY(12px)'};
+ span.animate([from,{opacity:1,filter:'blur(0)',transform:'translateY(0) scale(1)'}],{duration:beat.whisper?1300:emphasized?1000:650,delay:order*step+(emphasized?90:0),fill:'both',easing:'cubic-bezier(.16,1,.3,1)'});order++}textNode.replaceWith(fragment)}
+}
+
+
+let musicContext=null,musicSource=null,musicLoading=null;
+function musicInit(){
+ if(!musicContext){const Context=window.AudioContext||window.webkitAudioContext;if(!Context)return;musicContext=new Context();}
+ if(!document.hidden)musicContext.resume().catch(()=>{});
+ if(musicSource||musicLoading)return;
+ musicLoading=fetch('assets/music-loop.mp3').then(r=>{if(!r.ok)throw Error('audio');return r.arrayBuffer()}).then(data=>musicContext.decodeAudioData(data)).then(buffer=>{
+ const source=musicContext.createBufferSource();source.buffer=buffer;source.loop=true;source.loopStart=0;source.loopEnd=buffer.duration;
+ const gain=musicContext.createGain();gain.gain.setValueAtTime(0,musicContext.currentTime);gain.gain.linearRampToValueAtTime(.65,musicContext.currentTime+3.5);source.connect(gain);gain.connect(musicContext.destination);source.start();musicSource=source;if(document.hidden)musicContext.suspend().catch(()=>{});
+ }).catch(()=>{musicLoading=null});
+}
+function musicPause(){if(musicContext&&musicContext.state==='running')musicContext.suspend().catch(()=>{})}
+function musicResume(){if(started&&!holding&&!document.hidden)musicInit()}
+
+function cancelTask(){clearTimeout(timer);timer=null;pending=null;remaining=0}
+function arm(fn,ms){clearTimeout(timer);pending=fn;remaining=ms;if(holding||document.hidden)return;deadline=performance.now()+ms;timer=setTimeout(()=>{timer=null;pending=null;remaining=0;fn()},ms)}
+function freeze(){if(timer!==null){remaining=Math.max(0,deadline-performance.now());clearTimeout(timer);timer=null}pausedAnimations=$('passage').getAnimations({subtree:true});for(const animation of pausedAnimations)animation.pause()}
+function resume(){if(holding||document.hidden)return;musicResume();for(const animation of pausedAnimations)animation.play();pausedAnimations=[];if(pending){const fn=pending,ms=remaining;arm(fn,ms)}}
+function show(i,immediate=false){cancelTask();index=Math.max(0,Math.min(scenes.length-1,i));finished=false;const p=$('passage'),beat=direction(scenes[index],index);for(const animation of pausedAnimations)animation.cancel();pausedAnimations=[];p.style.setProperty('--fade',beat.fade+'ms');
+function paint(){renderPassage(p,scenes[index]);p.classList.toggle('emphasis',beat.anchor);p.classList.toggle('whisper',beat.whisper);p.classList.toggle('question',beat.question&&!beat.anchor);p.classList.remove('out');animateTypography(p,beat);arm(()=>{if(index===scenes.length-1){finishStory();return}show(index+1)},beat.hold)}
+if(immediate)paint();else{p.classList.add('out');arm(paint,beat.fade+beat.breath)}}
+function finishStory(){cancelTask();finished=true;$('passage').classList.add('out');arm(()=>{$('reader').hidden=true;$('ending').hidden=false;const video=$('memory');video.muted=true;video.play().catch(()=>{});},1400)}
+function begin(){started=true;musicInit();$('cover').hidden=true;$('reader').hidden=false;show(0,true)}
+$('start').onclick=begin;$('ending').addEventListener('pointerup',()=>{if(finished)$('memory').play().catch(()=>{})});
+const reader=$('reader');
+reader.addEventListener('pointerdown',e=>{if(!started||pointer!==null||e.isPrimary===false||e.button>0)return;e.preventDefault();pointer=e.pointerId;downAt=performance.now();originX=e.clientX;originY=e.clientY;holding=true;reader.setPointerCapture(e.pointerId);freeze()});
+function release(e,cancelled=false){if(e.pointerId!==pointer)return;e.preventDefault();const elapsed=performance.now()-downAt;const moved=Math.hypot(e.clientX-originX,e.clientY-originY)>25;pointer=null;holding=false;if(reader.hasPointerCapture(e.pointerId))reader.releasePointerCapture(e.pointerId);if(!cancelled&&!moved&&elapsed<250){const middle=reader.getBoundingClientRect().left+reader.clientWidth/2;show(originX<middle?index-1:index+1,true)}else resume()}
+reader.addEventListener('pointerup',e=>release(e));reader.addEventListener('pointercancel',e=>release(e,true));reader.addEventListener('lostpointercapture',()=>{if(pointer!==null){pointer=null;holding=false;resume()}});reader.addEventListener('contextmenu',e=>e.preventDefault());
+document.addEventListener('visibilitychange',()=>{if(document.hidden){freeze();musicPause();$('memory').pause()}else{resume();musicResume();if(finished)$('memory').play().catch(()=>{})}});window.addEventListener('blur',freeze);window.addEventListener('focus',()=>{resume();musicResume()});
+document.addEventListener('keydown',e=>{if(!started)return;if(e.key==='ArrowLeft'||e.key==='ArrowRight'){e.preventDefault();show(index+(e.key==='ArrowLeft'?-1:1),true)}if(e.code==='Space'&&!e.repeat){e.preventDefault();holding=true;freeze()}});document.addEventListener('keyup',e=>{if(e.code==='Space'&&started){e.preventDefault();holding=false;resume()}});
+</script></body></html>
